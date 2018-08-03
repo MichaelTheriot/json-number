@@ -14,7 +14,8 @@ const toString = String;
 const isFinite = Number.isFinite;
 const isNegZero = Object.is.bind(null, -0);
 
-// NOTE: this intentionally throws the way JSON.stringify would on misconstrued Reflect.construct objects (e.g. object with [[StringData]] or [[NumberData]] internal slot but incorrect type)
+// NOTE: this intentionally throws the way JSON.stringify would on misconstrued Reflect.construct objects
+// e.g. object with [[StringData]] or [[NumberData]] internal slot but incorrect type
 const toJSONNumberString = (val) => {
   switch (typeof val) {
     case 'object':
